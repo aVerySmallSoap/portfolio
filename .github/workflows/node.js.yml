@@ -37,5 +37,5 @@ jobs:
 
       - name: Run script
         run: | 
-          node ../.github/action-scripts/persist_octo.mjs
+          node .github/action-scripts/persist_octo.mjs
   
