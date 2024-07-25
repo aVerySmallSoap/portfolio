@@ -1,10 +1,7 @@
 <script setup>
-import {Octokit} from 'octokit'
-const octokit = new Octokit({
-  auth: process.env.TOKEN
-})
+import {octo} from '../../octo/persist_octo.js.mjs'
 function load() {
-  return octokit.request('GET /users/{username}/repos', {
+  return octo().request('GET /users/{username}/repos', {
     username: "aVerySmallSoap",
   })
 }
