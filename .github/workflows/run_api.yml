@@ -14,6 +14,6 @@ jobs:
 
       - name: Run script
         run: |
-          node ../../src/octo/persist_octo.js.mjs
+          node ../src/octo/persist_octo.js.mjs
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
