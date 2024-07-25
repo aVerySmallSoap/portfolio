@@ -1,5 +1,5 @@
 <script setup>
-import {octo} from '../../octo/persist_octo.js.mjs'
+import {octo} from '../../../.github/action-scripts/persist_octo.js.mjs'
 function load() {
   return octo().request('GET /users/{username}/repos', {
     username: "aVerySmallSoap",
