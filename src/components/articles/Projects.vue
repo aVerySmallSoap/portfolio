@@ -6,7 +6,6 @@ function load() {
   })
 }
 const repos = await load();
-console.log(repos.data)
 </script>
 
 <template>
