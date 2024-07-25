@@ -12,7 +12,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '16.17.0'
+          node-version: '18.17.0'
           cache: npm
 
       - name: Install dependencies
@@ -20,6 +20,6 @@ jobs:
 
       - name: Run script
         run: |
-          node ./src/octo/persist_octo.js.mjs
+          node ../src/octo/persist_octo.js.mjs
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
