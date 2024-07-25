@@ -8,14 +8,12 @@ jobs:
     steps:
       - name: Check out repo content
         uses: actions/checkout@v4
-        with:
-            sparse-checkout: .src
 
       - name: Install dependencies
         run: npm install
 
       - name: Run script
         run: |
-          node ./src/octo/persist_octo.js.mjs
+          node ../src/octo/persist_octo.js.mjs
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
