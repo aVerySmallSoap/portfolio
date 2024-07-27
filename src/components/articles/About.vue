@@ -1,13 +1,5 @@
 <script setup>
-import {onMounted} from "vue";
-import anime from "animejs";
-onMounted(() => {
-  anime({
-    targets: '#test',
-    loop: true,
-    translateX: 250,
-  })
-});
+
 </script>
 
 <template>
@@ -20,7 +12,6 @@ onMounted(() => {
         <section id="additional">
           <h2>Additional</h2>
           <article class="left-padded">
-            <span>1962 Adlaon St., Brgy. Salvacion, Panabo City, Davao Del Norte</span>
           </article>
         </section>
         <section id="socials">
@@ -64,9 +55,7 @@ onMounted(() => {
         </article>
         <article id="dream"></article>
       </section>
-      <div id="test" class="h-32 w-32 bg-blue-400"></div>
       <section>
-        
       </section>
     </div>
   </div>
