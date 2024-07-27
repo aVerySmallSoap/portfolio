@@ -17,14 +17,22 @@ onMounted(() => {
   heroanim.add({
     targets: '#hero-break',
     keyframes: [
-      {width: [0, '50%']},
+      {width: [0, '80%'], duration: 1000, easing: 'easeOutExpo'},
       {
         'boxShadow': '0 0 4px 1px rgba(0,0,0,25%)',
-        delay: 500,
+        delay: 150,
         easing: 'easeInOutExpo'
       }
     ],
     delay: 200,
+  })
+  heroanim.add({
+    targets: '#quick-mail',
+    keyframes: [
+      {opacity: [0, 1], translateY: [-20, 0], duration: 1000, easing: 'linear'},
+    ],
+    duration: 500,
+    delay: 500,
   })
 })
 
@@ -55,11 +63,13 @@ function coont(){
 <template>
   <div ref="hero" id="hero-container" class="flex justify-center h-full">
     <div class="hero-intro flex flex-col justify-center">
-      <div class="falltainer p-5" @click="coont">
-        <h2>Hi, I'm <span>Lirys</span>!</h2>
-        <span class="text-gray-500">An aspiring software engineer</span>
+      <div class="falltainer flex flex-col text-center items-center p-5" @click="coont">
+        <h2 class="tracking-widest">Hi, I'm <span>Lirys</span>!</h2>
+        <span class="text-gray-500 tracking-wider">An aspiring software engineer</span>
+        <span class="text-gray-500 tracking-wider">I create desktop and web applications</span>
         <hr id="hero-break" class="border-black">
       </div>
+      <span id="quick-mail" class="text-center text-gray-500">bellezalirys@gmail.com</span>
     </div>
   </div>
 </template>
@@ -74,8 +84,5 @@ function coont(){
   }
   .falltainer:hover{
     cursor: pointer;
-  }
-  #hero-break{
-    margin-left: 25%;
   }
 </style>
