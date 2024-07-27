@@ -27,7 +27,7 @@ onMounted(() => {
     <div class="container flex flex-grow justify-center">
       <div class="flex flex-col items-center px-24">
         <div class="flex justify-center items-center p-1.5 border border-black rounded-full">
-          <img class="w-32 h-32 rounded-full" src="../../assets/zack.jpg" alt="mod">
+          <img class="w-32 h-32 rounded-full" src="" alt="mod">
         </div>
         <div id="about-desc" class="h-full py-5">
           <span>I'm Lirys Nhoj Roben S. Belleza, a student at Davao Del Norte State College studying BSIT.</span>
