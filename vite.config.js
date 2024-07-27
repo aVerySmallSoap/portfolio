@@ -4,10 +4,11 @@ import vue from '@vitejs/plugin-vue'
 // https://vitejs.dev/config/
 export default defineConfig({
   rollupOptions:{
-    external: ['vue'],
+    external: ['vue','animeJS'],
     output: {
       globals: {
         vue: 'Vue',
+        animeJS: 'animeJS',
       }
     }
   },
