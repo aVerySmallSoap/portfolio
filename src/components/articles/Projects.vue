@@ -6,24 +6,44 @@ function load() {
   })
 }
 const repos = await load();
+
+
 </script>
 
 <template>
-  <div id="projects" class="grid grid-cols-3 grid-flow-row gap-2 mx-2 p-2 justify-items-center overflow-y-auto">
-    <div class="border-4 border-gray-700 w-2/3 max-w-md rounded-md transition-all ease-in-out duration-75 hover:-translate-y-0.5 hover:drop-shadow-md" v-for="repo in repos.data">
-      <img src="" alt="Github genereated image" class="h-32 rounded-t-lg ">
-      <div class="border-t border-t-black-0 max-h-fit p-1">
-        <span>{{repo.name}}</span>
-        <p>Short desc</p>
-        <a v-bind:href="repo.html_url" target="_blank"
-           class="border drop-shadow-md transition ease-out hover:bg-blue-400">Check on Github</a>
-        <br>
-        <span>Used: {{repo.language}}</span>
+  <div id="projects" class="flex justify-center">
+    <div class="flex flex-col flex-grow  h-full mx-32">
+      <h2 class="text-center my-12">
+        Projects
+      </h2>
+      <div class="grid grid-cols-3 gap-y-12 justify-items-center">
+        <div class="git-card flex justify-center p-1 min-h-40 min-w-48 shadow-md rounded-lg" v-for="repo in repos.data">
+          <div class="flex flex-col flex-grow justify-center text-center items-center text-white">
+            <span>{{repo.name}}</span>
+            <a v-bind:href="repo.html_url" target="_blank"
+               class="git-check shadow-sm p-1 m-1 max-w-42 bg-white text-black rounded-lg">
+              Check on Github
+            </a>
+            <span>Used: {{repo.language}}</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-
+  .git-card{
+    background-color: #2b3137;
+    border: 1px solid rgba(0,0,0,20%);
+  }
+  .git-check{
+    transition: background-color 200ms ease, transform 200ms ease-out;
+    border: 1px solid rgba(0,0,0,20%);
+  }
+  .git-check:hover{
+    background: #2dba4e;
+    color: white;
+    transform: scale(105%);
+  }
 </style>

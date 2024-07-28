@@ -39,7 +39,12 @@ onMounted(() => {
 function coont(){
   secret.value++;
   if(secret.value === 5){
-    anime({
+    let timeline = anime.timeline()
+    timeline.add({
+      targets: '#quick-mail',
+      opacity: [1, 0],
+    })
+    timeline.add({
       targets: '.falltainer',
       keyframes: [
         {rotateZ: -10, translateY: '+=10'},
@@ -53,8 +58,9 @@ function coont(){
         {'boxShadow': '0 0 4px 4px rgba(253, 218, 13, 50%)', delay: 200},
       ],
       duration: 2000
-    }).finished.then( _ =>
-        document.querySelector('.falltainer').style.cursor = "default"
+    }).finished.then(
+        _ =>
+            document.querySelector('.falltainer').style.cursor = "default"
     )
   }
 }
